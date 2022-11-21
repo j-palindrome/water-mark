@@ -1,0 +1,84 @@
+{
+  "name": "watermark",
+  "version": "0.1.0",
+  "displayName": "WaterMark",
+  "description": "All whitespace is recognized in Markdown",
+  "keywords": [
+    "markdown"
+  ],
+  "repository": {
+    "url": "https://"
+  },
+  "icon": "./icons/watermark-logo.png",
+  "publisher": "Joshua Reinier",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "grammars": [
+      {
+        "path": "./syntaxes/injection.json",
+        "scopeName": "watermark.injection",
+        "injectTo": [
+          "text.html.markdown"
+        ]
+      }
+    ],
+    "configurationDefaults": {
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "name": "Italic",
+            "scope": "markup.italic",
+            "settings": {
+              "fontStyle": "italic"
+            }
+          },
+          {
+            "name": "Bold",
+            "scope": "markup.bold",
+            "settings": {
+              "fontStyle": "bold",
+              "foreground": "#ffffff"
+            }
+          },
+          {
+            "name": "Bold Italic",
+            "scope": "bold.italic",
+            "settings": {
+              "fontStyle": "bold italic"
+            }
+          },
+          {
+            "name": "Highlight",
+            "scope": "markup.highlight",
+            "settings": {
+              "foreground": "#ded97c"
+            }
+          },
+          {
+            "name": "Heading",
+            "scope": "markup.heading.markdown",
+            "settings": {
+              "fontStyle": "bold",
+              "foreground": "#65a6c4"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "main": "./src/index.js",
+  "scripts": {},
+  "devDependencies": {
+    "vscode": "^1.1.37"
+  }
+}

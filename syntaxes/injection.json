@@ -1,0 +1,40 @@
+{
+  "scopeName": "watermark.injection",
+  "injectionSelector": "L:text.html.markdown",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#bold"
+    },
+    {
+      "include": "#italic"
+    },
+    {
+      "include": "#highlight"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "match": "\\/\\*.+\\*\\/|\\/\\/.+\n",
+      "name": "comment.block.html"
+    },
+    "bold": {
+      "match": "\\*.*\\*",
+      "name": "markup.bold"
+    },
+    "italic": {
+      "match": "_.*_",
+      "name": "markup.italic"
+    },
+    "highlight": {
+      "match": "\\=.+\\=",
+      "name": "markup.highlight"
+    },
+    "bold-italic": {
+      "match": "_\\*.+\\*_",
+      "name": "markup.bold.italic"
+    }
+  }
+}
